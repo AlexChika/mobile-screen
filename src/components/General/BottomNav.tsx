@@ -1,4 +1,5 @@
 import { Flex, Link, Stack, Text } from "@chakra-ui/react";
+import { Link as ReactRouterLink, useLocation } from "react-router-dom";
 import HomeIcon from "../../assets/icons/HomeIcon";
 import ReportsIcon from "../../assets/icons/ReportsIcon";
 import ChatsIcon from "../../assets/icons/ChatsIcon";
@@ -13,17 +14,17 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    url: "/#home",
+    url: "/home",
     Icon: HomeIcon,
     name: "Home",
   },
   {
-    url: "/#reports",
+    url: "/reports",
     Icon: ReportsIcon,
     name: "Reports",
   },
   {
-    url: "/#chat",
+    url: "/chat",
     Icon: ChatsIcon,
     name: "Chat",
   },
@@ -33,16 +34,17 @@ const navLinks: NavLink[] = [
     name: "Budget",
   },
   {
-    url: "/#profile",
+    url: "/profile",
     Icon: ProfileIcon,
     name: "Profile",
   },
 ];
 
 function BottomNav() {
+  let location = useLocation();
+
   const path = () => {
-    const url = new URL(window.location.href);
-    return url.pathname;
+    return location.pathname;
   };
 
   return (
@@ -62,9 +64,15 @@ function BottomNav() {
     >
       {navLinks.map((link, id) => {
         const { Icon, name, url } = link;
+        console.log({ url });
 
         return (
-          <Link key={id} href={url} _hover={{ textDecorationLine: "unset" }}>
+          <Link
+            as={ReactRouterLink}
+            key={id}
+            to={url}
+            _hover={{ textDecorationLine: "unset" }}
+          >
             <Stack align="center">
               <Icon color={url === path() ? "brand.primaryBlue" : undefined} />
               <Text
