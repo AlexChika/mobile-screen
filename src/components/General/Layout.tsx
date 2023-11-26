@@ -9,7 +9,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         pb="95px"
         minH="100vh"
         mx="auto"
-        maxW={{ base: 390 }}
+        maxW={{ base: 500, md: 390 }}
       >
         <Box px={5}>{children}</Box>
         <BottomNav />

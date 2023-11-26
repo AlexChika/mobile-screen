@@ -57,7 +57,7 @@ function BottomNav() {
       w="full"
       blur="25px"
       boxShadow="0px -5px 20px 5px rgba(0, 0, 0, 0.04)"
-      maxW={{ base: 390 }}
+      maxW={{ base: 500, md: 390 }}
       bottom="0"
     >
       {navLinks.map((link, id) => {
