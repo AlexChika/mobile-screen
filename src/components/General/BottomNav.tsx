@@ -13,17 +13,17 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    url: "/home",
+    url: "/#home",
     Icon: HomeIcon,
     name: "Home",
   },
   {
-    url: "/reports",
+    url: "/#reports",
     Icon: ReportsIcon,
     name: "Reports",
   },
   {
-    url: "/chat",
+    url: "/#chat",
     Icon: ChatsIcon,
     name: "Chat",
   },
@@ -33,7 +33,7 @@ const navLinks: NavLink[] = [
     name: "Budget",
   },
   {
-    url: "/profile",
+    url: "/#profile",
     Icon: ProfileIcon,
     name: "Profile",
   },
