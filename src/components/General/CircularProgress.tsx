@@ -7,9 +7,6 @@ type CircularProgress = {
   trackColor?: string;
   thickness?: number;
   children?: React.ReactNode;
-  linearGradient?: boolean;
-  gradientbg1?: string;
-  gradientbg2?: string;
 };
 
 function CircularProgress(props: CircularProgress) {
@@ -19,7 +16,6 @@ function CircularProgress(props: CircularProgress) {
     thickness = 10,
     trackColor = "brand.gray",
     color = "brand.secondaryBlue",
-    linearGradient = false,
   } = props;
   let { value = 25 } = props;
 
@@ -79,7 +75,7 @@ function CircularProgress(props: CircularProgress) {
       >
         <circle
           className="animateCircle"
-          stroke={linearGradient ? "url(#GradientColor)" : "currentColor"}
+          stroke="currentColor"
           fill="none"
           strokeWidth={thickness}
           strokeDasharray={strokeDash}
