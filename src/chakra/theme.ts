@@ -9,12 +9,17 @@ const theme = extendTheme(
   { config },
 
   {
+    fonts: {
+      heading: `'Circular Std', sans-serif`,
+      body: `'Circular Std', sans-serif`,
+    },
     colors: {
       brand: {
         primaryBlue: "#0466C8",
         primaryBlack: "#001233",
+        tertiaryBlack: "#707480",
         gray: "#C1C4CD",
-        800: "#153e75",
+        bg: "#FCFCFC",
         700: "#2a69ac",
       },
     },

@@ -13,7 +13,7 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    url: "/",
+    url: "/home",
     Icon: HomeIcon,
     name: "Home",
   },
@@ -28,7 +28,7 @@ const navLinks: NavLink[] = [
     name: "Chat",
   },
   {
-    url: "/budget",
+    url: "/",
     Icon: BudgetIcon,
     name: "Budget",
   },
@@ -57,6 +57,8 @@ function BottomNav() {
       h="80px"
       pos="fixed"
       w="full"
+      blur="25px"
+      boxShadow="0px -5px 20px 5px rgba(0, 0, 0, 0.04)"
       maxW={{ base: 390 }}
       bottom="0"
     >
