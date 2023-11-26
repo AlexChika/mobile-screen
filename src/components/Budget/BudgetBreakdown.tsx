@@ -47,8 +47,8 @@ function BudgetBreakdown({ budget }: { budget: Budget }) {
 
               {/* amount spent / amount budgeted  */}
               <Flex>
-                <Text>{spent}/</Text>
-                <Text color="brand.gray">{budgeted}</Text>
+                <Text>#{spent}/</Text>
+                <Text color="brand.gray">#{budgeted}</Text>
               </Flex>
             </Flex>
           );

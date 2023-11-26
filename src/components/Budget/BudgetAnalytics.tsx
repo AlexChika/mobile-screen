@@ -34,7 +34,6 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
       <Flex justify="space-between">
         <Flex gap={6}>
           <Button
-            fontSize="14px"
             fontWeight="700"
             color={
               budget.month === monthNames[new Date().getMonth() - 1]
@@ -48,7 +47,6 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
           </Button>
 
           <Button
-            fontSize="14px"
             fontWeight="700"
             color={
               budget.month === monthNames[new Date().getMonth()]
@@ -116,15 +114,15 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
 
       {/* spending details */}
       <Stack align="center">
-        <Text color="brand.tertiaryBlack" fontSize="13px">
+        <Text color="brand.tertiaryBlack" fontSize="14px">
           Amount spent so far
         </Text>
 
         <Flex>
-          <Text fontSize="15px" fontWeight="600" color="brand.primaryBlue">
+          <Text fontWeight="600" color="brand.primaryBlue">
             {Naira.format(getTotalSpent(budget))}
           </Text>
-          <Text fontSize="15px" fontWeight="600" color="brand.secondaryBlue">
+          <Text fontWeight="600" color="brand.secondaryBlue">
             / {Naira.format(getTotalBudget(budget))}
           </Text>
         </Flex>
