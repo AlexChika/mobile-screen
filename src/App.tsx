@@ -1,7 +1,12 @@
-import Budget from "./components/Budget";
+import Layout from "./components/General/Layout";
+import Budget from "./pages/Budget";
 
 function App() {
-  return <Budget />;
+  return (
+    <Layout>
+      <Budget />;
+    </Layout>
+  );
 }
 
 export default App;
