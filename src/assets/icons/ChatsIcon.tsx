@@ -1,62 +1,32 @@
-function ChatsIcon() {
+import { Box, Center } from "@chakra-ui/react";
+
+function ChatsIcon({ color = "#C1C4CD" }: IconProps) {
   return (
-    <svg
-      width="47"
-      height="47"
-      viewBox="0 0 47 47"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g opacity="0.6" filter="url(#filter0_d_346_12)">
-        <path
-          d="M35 19.5C35 13.1487 29.8513 8 23.5 8C17.1487 8 12 13.1487 12 19.5C12 25.8513 17.1487 31 23.5 31C29.8513 31 35 25.8513 35 19.5Z"
-          stroke="#797B8B"
-          stroke-width="3"
-        />
-      </g>
-      <path
-        opacity="0.6"
-        d="M26.8984 17.6353H24.5267V23.6783H22.8156V17.6353H20.4547V16H26.8984V17.6353Z"
-        stroke="#797B8B"
-        stroke-width="0.803901"
-      />
-      <defs>
-        <filter
-          id="filter0_d_346_12"
-          x="0.807143"
-          y="0.684286"
-          width="45.3857"
-          height="45.3857"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+    <Box color={color}>
+      <Center
+        w="25px"
+        h="25px"
+        borderColor={color}
+        borderWidth="3px"
+        borderStyle="solid"
+        rounded="100%"
+      >
+        <svg
+          width="8"
+          height="10"
+          viewBox="0 0 8 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-            result="hardAlpha"
+          <path
+            opacity="0.6"
+            d="M6.89838 2.63529H4.52668V8.67826H2.81559V2.63529H0.454712V1H6.89838V2.63529Z"
+            stroke="currentColor"
+            stroke-width="0.803901"
           />
-          <feOffset dy="3.87714" />
-          <feGaussianBlur stdDeviation="4.84643" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0.0705882 0 0 0 0 0.2 0 0 0 0.13 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow_346_12"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow_346_12"
-            result="shape"
-          />
-        </filter>
-      </defs>
-    </svg>
+        </svg>
+      </Center>
+    </Box>
   );
 }
 

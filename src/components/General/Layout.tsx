@@ -7,7 +7,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       pb="95px"
       minH="100vh"
       mx="auto"
-      maxW={{ base: 479 }}
+      maxW={{ base: 390 }}
       border={"2px solid red"}
     >
       {children}
