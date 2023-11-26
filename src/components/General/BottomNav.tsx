@@ -47,8 +47,6 @@ function BottomNav() {
 
   return (
     <Flex
-      //   display={{ base: "block", sm: "none" }}
-      //   border={"2px solid yellow"}
       px={5}
       align="center"
       justify="space-between"
