@@ -13,55 +13,65 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    url: "#",
+    url: "/",
     Icon: HomeIcon,
     name: "Home",
   },
   {
-    url: "#",
+    url: "/reports",
     Icon: ReportsIcon,
     name: "Reports",
   },
   {
-    url: "#",
+    url: "/chat",
     Icon: ChatsIcon,
     name: "Chat",
   },
   {
-    url: "/",
+    url: "/budget",
     Icon: BudgetIcon,
     name: "Budget",
   },
   {
-    url: "#",
+    url: "/profile",
     Icon: ProfileIcon,
     name: "Profile",
   },
 ];
 
 function BottomNav() {
+  const path = () => {
+    const url = new URL(window.location.href);
+    return url.pathname;
+  };
+
   return (
     <Flex
       //   display={{ base: "block", sm: "none" }}
-      px={2}
+      //   border={"2px solid yellow"}
+      px={5}
       align="center"
-      border={"2px solid red"}
-      justify="space-around"
+      justify="space-between"
       direction="row"
       bg="white"
       h="80px"
       pos="fixed"
-      w={{ base: 390 }}
+      w="full"
+      maxW={{ base: 390 }}
       bottom="0"
     >
       {navLinks.map((link, id) => {
         const { Icon, name, url } = link;
 
         return (
-          <Link href={url} _hover={{ textDecorationLine: "unset" }}>
-            <Stack key={id} align="center">
-              <Icon color="brand.primary" />
-              <Text fontWeight="bold" fontSize="10px">
+          <Link key={id} href={url} _hover={{ textDecorationLine: "unset" }}>
+            <Stack align="center">
+              <Icon color={url === path() ? "brand.primaryBlue" : undefined} />
+              <Text
+                color={url === path() ? "brand.primaryBlack" : "brand.gray"}
+                fontWeight="bold"
+                fontSize="10px"
+              >
                 {name}
               </Text>
             </Stack>

@@ -22,7 +22,7 @@ function ChatsIcon({ color = "#C1C4CD" }: IconProps) {
             opacity="0.6"
             d="M6.89838 2.63529H4.52668V8.67826H2.81559V2.63529H0.454712V1H6.89838V2.63529Z"
             stroke="currentColor"
-            stroke-width="0.803901"
+            strokeWidth="0.803901"
           />
         </svg>
       </Center>
