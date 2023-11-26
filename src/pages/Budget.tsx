@@ -4,12 +4,9 @@ import HeadOverview from "../components/Budget/HeadOverview";
 import BudgetAnalytics from "../components/Budget/BudgetAnalytics";
 import BudgetBreakdown from "../components/Budget/BudgetBreakdown";
 import budgets from "../assets/data";
-import { monthNames } from "../assets/data";
 
 function Budget() {
-  const [budget, setBudget] = useState(
-    budgets[monthNames[new Date().getMonth()]]
-  );
+  const [budget, setBudget] = useState(budgets[new Date().getMonth()]);
 
   return (
     <Stack>

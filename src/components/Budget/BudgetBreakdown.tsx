@@ -2,7 +2,7 @@ import { Box, Center, Flex, Stack, Text } from "@chakra-ui/react";
 import CircularProgress from "../General/CircularProgress";
 import { getSpendingPercentage } from "../../assets/data";
 
-function BudgetBreakdown({ budget }: { budget: Expense[] }) {
+function BudgetBreakdown({ budget }: { budget: Budget }) {
   return (
     <Box mt={5}>
       <Text color="brand.primaryBlack" fontWeight="700" fontSize="21px">
@@ -10,7 +10,7 @@ function BudgetBreakdown({ budget }: { budget: Expense[] }) {
       </Text>
 
       <Stack mt={5} gap={5}>
-        {budget.map((expense, i) => {
+        {budget.expenses.map((expense, i) => {
           const { Icon, budgeted, name, spent, primaryColor, secondaryColor } =
             expense;
           return (

@@ -2,9 +2,13 @@ import {
   Box,
   Button,
   Center,
-  // CircularProgress,
   Flex,
   IconButton,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -16,10 +20,13 @@ import {
   getTotalSpendPercentage,
   getTotalSpent,
 } from "../../assets/data";
+import budgets from "../../assets/data";
 
-// border={"2px solid yellow"}
-
-function BudgetAnalytics({ budget }: { budget: Expense[] }) {
+type Props = {
+  budget: Budget;
+  setBudget: React.Dispatch<React.SetStateAction<Budget>>;
+};
+function BudgetAnalytics({ budget, setBudget }: Props) {
   return (
     <Box>
       {/* Month Selection Pane */}
@@ -30,6 +37,7 @@ function BudgetAnalytics({ budget }: { budget: Expense[] }) {
             fontWeight="700"
             color="brand.tertiaryBlack"
             variant="link"
+            onClick={() => setBudget(budgets[new Date().getMonth() - 1])}
           >
             Last Month
           </Button>
@@ -39,17 +47,31 @@ function BudgetAnalytics({ budget }: { budget: Expense[] }) {
             fontWeight="700"
             color="brand.primaryBlue"
             variant="link"
+            onClick={() => setBudget(budgets[new Date().getMonth()])}
           >
             This Month
           </Button>
         </Flex>
 
-        <IconButton
-          fontWeight="700"
-          aria-label="show all month dropdown"
-          variant="link"
-          icon={<ThreedotsIcon />}
-        />
+        <Menu>
+          <MenuButton as={Link}>
+            <IconButton
+              fontWeight="700"
+              aria-label="show all month dropdown"
+              variant="link"
+              icon={<ThreedotsIcon />}
+            />
+          </MenuButton>
+          <MenuList>
+            {budgets.map((budget) => {
+              return (
+                <MenuItem onClick={() => setBudget(budget)}>
+                  {budget.month}
+                </MenuItem>
+              );
+            })}
+          </MenuList>
+        </Menu>
       </Flex>
 
       {/* spending progressBar */}
