@@ -4,7 +4,7 @@ import Budget from "./pages/Budget";
 function App() {
   return (
     <Layout>
-      <Budget />;
+      <Budget />
     </Layout>
   );
 }

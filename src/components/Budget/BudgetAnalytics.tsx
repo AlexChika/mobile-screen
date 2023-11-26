@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import ThreedotsIcon from "../../assets/icons/ThreedotsIcon";
-import CircularProgess from "../General/CircularProgress";
+import CircularProgress from "../General/CircularProgress";
 
 // border={"2px solid yellow"}
 
@@ -18,23 +18,25 @@ function BudgetAnalytics() {
     <Box>
       {/* Month Selection Pane */}
       <Flex justify="space-between">
-        <Button
-          fontSize="14px"
-          fontWeight="700"
-          color="brand.tertiaryBlack"
-          variant="link"
-        >
-          Last Month
-        </Button>
+        <Flex gap={6}>
+          <Button
+            fontSize="14px"
+            fontWeight="700"
+            color="brand.tertiaryBlack"
+            variant="link"
+          >
+            Last Month
+          </Button>
 
-        <Button
-          fontSize="14px"
-          fontWeight="700"
-          color="brand.primaryBlue"
-          variant="link"
-        >
-          This Month
-        </Button>
+          <Button
+            fontSize="14px"
+            fontWeight="700"
+            color="brand.primaryBlue"
+            variant="link"
+          >
+            This Month
+          </Button>
+        </Flex>
 
         <IconButton
           fontWeight="700"
@@ -46,24 +48,24 @@ function BudgetAnalytics() {
 
       {/* spending progressBar */}
       <Center mx="auto" mt={10} mb={5}>
-        <CircularProgess
+        <CircularProgress
           color="brand.tertiaryBlue"
-          size={160}
+          size={150}
           value={100}
           thickness={10}
         >
-          <CircularProgess
+          <CircularProgress
             trackColor="transparent"
             color="brand.primaryBlue"
-            size={132}
+            size={122}
             value={49}
             thickness={6}
           >
             <Text fontSize="30px" fontWeight="900" color="brand.primaryBlue">
               49%
             </Text>
-          </CircularProgess>
-        </CircularProgess>
+          </CircularProgress>
+        </CircularProgress>
       </Center>
 
       {/* spending details */}

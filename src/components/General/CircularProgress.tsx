@@ -12,7 +12,7 @@ type CircularProgress = {
   gradientbg2?: string;
 };
 
-function CircularProgess(props: CircularProgress) {
+function CircularProgress(props: CircularProgress) {
   const {
     children,
     size,
@@ -94,4 +94,4 @@ function CircularProgess(props: CircularProgress) {
   );
 }
 
-export default CircularProgess;
+export default CircularProgress;
