@@ -2,42 +2,47 @@ import FoodIcon from "./icons/FoodIcon";
 import PiggySavingsIcon from "./icons/PiggySavingsIcon";
 
 type Budget = {
-  [key: string]: {
-    name: string;
-    spent: number;
-    budgeted: number;
-    icon: (props: IconProps) => React.JSX.Element;
-  }[];
+  [key: string]: Expense[];
 };
 
-const budget: Budget = {
+const budgets: Budget = {
   january: [
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "food and drink",
       spent: 9000,
       budgeted: 18000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Event planning",
       spent: 6000,
       budgeted: 6300,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Birthday party",
       spent: 2000,
       budgeted: 2000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Rent",
       spent: 4500,
       budgeted: 5000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Miscellanous",
       spent: 1200,
       budgeted: 12000,
@@ -45,31 +50,41 @@ const budget: Budget = {
   ],
   february: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Mountain exploration",
       spent: 6500,
       budgeted: 6500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Home renovation",
       spent: 15000,
       budgeted: 20000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Birthday surprise",
       spent: 3500,
       budgeted: 3500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Groceries",
       spent: 3200,
       budgeted: 5000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Miscellanous",
       spent: 6000,
       budgeted: 6000,
@@ -77,31 +92,41 @@ const budget: Budget = {
   ],
   march: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Adventure travel",
       spent: 4800,
       budgeted: 5500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Household upgrades",
       spent: 12000,
       budgeted: 18000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Special occasion celebration",
       spent: 2800,
       budgeted: 3200,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly provisions",
       spent: 3800,
       budgeted: 6000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Various expenses",
       spent: 5500,
       budgeted: 5500,
@@ -109,31 +134,41 @@ const budget: Budget = {
   ],
   april: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Wildlife photography tour",
       spent: 7200,
       budgeted: 8000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Living room makeover",
       spent: 14000,
       budgeted: 20000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Anniversary surprise",
       spent: 4200,
       budgeted: 4500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Grocery essentials",
       spent: 4000,
       budgeted: 5500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Unexpected expenses",
       spent: 5000,
       budgeted: 5000,
@@ -141,31 +176,41 @@ const budget: Budget = {
   ],
   may: [
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Camping adventure",
       spent: 6000,
       budgeted: 7000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Kitchen remodel",
       spent: 16000,
       budgeted: 22000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Graduation celebration",
       spent: 3000,
       budgeted: 3500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly groceries",
       spent: 4500,
       budgeted: 6000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Miscellaneous expenses",
       spent: 4800,
       budgeted: 5000,
@@ -173,31 +218,41 @@ const budget: Budget = {
   ],
   june: [
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Beach vacation",
       spent: 8000,
       budgeted: 9000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Home office upgrade",
       spent: 18000,
       budgeted: 25000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Summer party",
       spent: 3500,
       budgeted: 4000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Grocery essentials",
       spent: 5000,
       budgeted: 6500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Unexpected expenses",
       spent: 5200,
       budgeted: 5500,
@@ -205,31 +260,41 @@ const budget: Budget = {
   ],
   july: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "National park adventure",
       spent: 7500,
       budgeted: 8000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Outdoor patio renovation",
       spent: 20000,
       budgeted: 25000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Independence Day celebration",
       spent: 4000,
       budgeted: 4500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Monthly groceries",
       spent: 4800,
       budgeted: 6000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Miscellaneous summer expenses",
       spent: 5500,
       budgeted: 5500,
@@ -237,31 +302,41 @@ const budget: Budget = {
   ],
   august: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Backpacking adventure",
       spent: 7000,
       budgeted: 7500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Living room redecoration",
       spent: 16000,
       budgeted: 20000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "End-of-summer bash",
       spent: 3800,
       budgeted: 4000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly grocery haul",
       spent: 4600,
       budgeted: 6000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Various expenses",
       spent: 5300,
       budgeted: 5500,
@@ -269,31 +344,41 @@ const budget: Budget = {
   ],
   september: [
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Mountain retreat",
       spent: 6800,
       budgeted: 7500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Home office makeover",
       spent: 19000,
       budgeted: 22000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Autumn celebration",
       spent: 4200,
       budgeted: 4500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly grocery essentials",
       spent: 5000,
       budgeted: 6500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Unexpected expenses",
       spent: 5200,
       budgeted: 5500,
@@ -301,31 +386,41 @@ const budget: Budget = {
   ],
   october: [
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Haunted house tour",
       spent: 7200,
       budgeted: 8000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Fall-themed home decor",
       spent: 17000,
       budgeted: 20000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Halloween party",
       spent: 3500,
       budgeted: 4000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly grocery haul",
       spent: 4800,
       budgeted: 6000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Various autumn expenses",
       spent: 5300,
       budgeted: 5500,
@@ -333,31 +428,41 @@ const budget: Budget = {
   ],
   november: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Fall foliage tour",
       spent: 6500,
       budgeted: 7000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Thanksgiving home preparations",
-      spent: 18000,
-      budgeted: 22000,
+      spent: 8000,
+      budgeted: 9000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Friendsgiving celebration",
       spent: 4000,
       budgeted: 4500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Monthly grocery essentials",
       spent: 4500,
       budgeted: 6000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Various autumn expenses",
       spent: 5200,
       budgeted: 5500,
@@ -365,31 +470,41 @@ const budget: Budget = {
   ],
   december: [
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Winter Wonderland getaway",
       spent: 8000,
       budgeted: 9000,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "Holiday home decorations",
       spent: 20000,
       budgeted: 25000,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Christmas celebration",
       spent: 4200,
       budgeted: 4500,
     },
     {
-      icon: FoodIcon,
+      primaryColor: "brand.primaryYellow",
+      secondaryColor: "brand.secondaryYellow",
+      Icon: FoodIcon,
       name: "Year-end grocery shopping",
       spent: 5000,
       budgeted: 6500,
     },
     {
-      icon: PiggySavingsIcon,
+      primaryColor: "brand.primaryGreen",
+      secondaryColor: "brand.secondaryGreen",
+      Icon: PiggySavingsIcon,
       name: "New Year's Eve party",
       spent: 5500,
       budgeted: 5500,
@@ -397,4 +512,40 @@ const budget: Budget = {
   ],
 };
 
-export default budget;
+var monthNames = [
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december",
+];
+
+function getTotalBudget(month: Budget[keyof Budget]) {
+  let totalBudget = 0;
+  month.forEach((m) => {
+    totalBudget += m.budgeted;
+  });
+
+  return totalBudget;
+}
+function getTotalSpent(month: Budget[keyof Budget]) {
+  let totalSpent = 0;
+  month.forEach((m) => {
+    totalSpent += m.spent;
+  });
+
+  return totalSpent;
+}
+function getSpendingPercentage(expense: Expense) {
+  return ((expense.spent / expense.budgeted) * 100).toFixed(0);
+}
+
+export default budgets;
+export { monthNames, getTotalBudget, getSpendingPercentage, getTotalSpent };

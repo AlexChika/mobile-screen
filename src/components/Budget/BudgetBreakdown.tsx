@@ -1,53 +1,54 @@
 import { Box, Center, Flex, Stack, Text } from "@chakra-ui/react";
 import CircularProgress from "../General/CircularProgress";
-import FoodIcon from "../../assets/icons/FoodIcon";
-import PiggySavingsIcon from "../../assets/icons/PiggySavingsIcon";
+import { getSpendingPercentage } from "../../assets/data";
 
-function BudgetBreakdown() {
+function BudgetBreakdown({ budget }: { budget: Expense[] }) {
   return (
     <Box mt={5}>
       <Text color="brand.primaryBlack" fontWeight="700" fontSize="21px">
         Category Breakdown
       </Text>
 
-      <Stack mt={5}>
-        {[11, 2, 34, 5, 67, 89, 8].map((x) => {
+      <Stack mt={5} gap={5}>
+        {budget.map((expense, i) => {
+          const { Icon, budgeted, name, spent, primaryColor, secondaryColor } =
+            expense;
           return (
-            <Flex justify="space-between">
+            <Flex key={i} justify="space-between">
               <Flex gap={3}>
                 {/* avatar / imgae */}
                 <CircularProgress
                   thickness={3}
                   trackColor="transparent"
-                  color="brand.primaryGreen"
-                  value={40}
+                  color={primaryColor}
+                  value={+getSpendingPercentage(expense)}
                   size={50}
                 >
-                  <Center
-                    rounded={50}
-                    h="inherit"
-                    w="full"
-                    bg="brand.secondaryGreen"
-                  >
-                    <PiggySavingsIcon />
+                  <Center rounded={50} h="inherit" w="full" bg={secondaryColor}>
+                    <Icon />
                   </Center>
                 </CircularProgress>
 
                 {/* title and percentage */}
                 <Stack>
-                  <Text fontWeight="700" fontSize="14px">
-                    Food and Drink
+                  <Text
+                    isTruncated
+                    maxW="160px"
+                    fontWeight="700"
+                    fontSize="14px"
+                  >
+                    {name}
                   </Text>
                   <Text color="brand.tertiaryBlack" mt={-2} fontSize="14px">
-                    40%
+                    {getSpendingPercentage(expense)}%
                   </Text>
                 </Stack>
               </Flex>
 
               {/* amount spent / amount budgeted  */}
               <Flex>
-                <Text>₦20,000/</Text>
-                <Text color="brand.gray">₦42,000</Text>
+                <Text>{spent}/</Text>
+                <Text color="brand.gray">{budgeted}</Text>
               </Flex>
             </Flex>
           );

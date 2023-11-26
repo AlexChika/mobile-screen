@@ -1,16 +1,23 @@
+import { useState } from "react";
 import { Stack } from "@chakra-ui/react";
 import HeadOverview from "../components/Budget/HeadOverview";
 import BudgetAnalytics from "../components/Budget/BudgetAnalytics";
 import BudgetBreakdown from "../components/Budget/BudgetBreakdown";
+import budgets from "../assets/data";
+import { monthNames } from "../assets/data";
 
 function Budget() {
+  const [budget, setBudget] = useState(
+    budgets[monthNames[new Date().getMonth()]]
+  );
+
   return (
     <Stack>
-      <HeadOverview />
+      <HeadOverview budget={budget} />
 
-      <BudgetAnalytics />
+      <BudgetAnalytics budget={budget} setBudget={setBudget} />
 
-      <BudgetBreakdown />
+      <BudgetBreakdown budget={budget} />
     </Stack>
   );
 }
