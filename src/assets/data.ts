@@ -432,40 +432,40 @@ const budgets: Budget = {
       secondaryColor: "brand.secondaryGreen",
       Icon: PiggySavingsIcon,
       name: "Fall foliage tour",
-      spent: 6500,
-      budgeted: 7000,
+      spent: 23000,
+      budgeted: 34000,
     },
     {
       primaryColor: "brand.primaryYellow",
       secondaryColor: "brand.secondaryYellow",
       Icon: FoodIcon,
       name: "Thanksgiving home preparations",
-      spent: 8000,
-      budgeted: 9000,
+      spent: 7000,
+      budgeted: 33000,
     },
     {
       primaryColor: "brand.primaryGreen",
       secondaryColor: "brand.secondaryGreen",
       Icon: PiggySavingsIcon,
       name: "Friendsgiving celebration",
-      spent: 4000,
-      budgeted: 4500,
+      spent: 6000,
+      budgeted: 23000,
     },
     {
       primaryColor: "brand.primaryGreen",
       secondaryColor: "brand.secondaryGreen",
       Icon: PiggySavingsIcon,
       name: "Monthly grocery essentials",
-      spent: 4500,
-      budgeted: 6000,
+      spent: 9500,
+      budgeted: 15500,
     },
     {
       primaryColor: "brand.primaryYellow",
       secondaryColor: "brand.secondaryYellow",
       Icon: FoodIcon,
       name: "Various autumn expenses",
-      spent: 5200,
-      budgeted: 5500,
+      spent: 13200,
+      budgeted: 14500,
     },
   ],
   december: [
@@ -527,25 +527,39 @@ var monthNames = [
   "december",
 ];
 
-function getTotalBudget(month: Budget[keyof Budget]) {
+function getTotalBudget(budget: Budget[keyof Budget]) {
   let totalBudget = 0;
-  month.forEach((m) => {
+  budget.forEach((m) => {
     totalBudget += m.budgeted;
   });
 
   return totalBudget;
 }
-function getTotalSpent(month: Budget[keyof Budget]) {
+function getTotalSpent(budget: Budget[keyof Budget]) {
   let totalSpent = 0;
-  month.forEach((m) => {
+  budget.forEach((m) => {
     totalSpent += m.spent;
   });
 
   return totalSpent;
 }
+function getTotalSpendPercentage(budget: Budget[keyof Budget]) {
+  return ((getTotalSpent(budget) / getTotalBudget(budget)) * 100).toFixed(0);
+}
 function getSpendingPercentage(expense: Expense) {
   return ((expense.spent / expense.budgeted) * 100).toFixed(0);
 }
+const Naira = new Intl.NumberFormat("en-NG", {
+  style: "currency",
+  currency: "NGN",
+});
 
 export default budgets;
-export { monthNames, getTotalBudget, getSpendingPercentage, getTotalSpent };
+export {
+  monthNames,
+  getTotalBudget,
+  getSpendingPercentage,
+  getTotalSpendPercentage,
+  getTotalSpent,
+  Naira,
+};

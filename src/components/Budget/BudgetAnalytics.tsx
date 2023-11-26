@@ -10,10 +10,16 @@ import {
 } from "@chakra-ui/react";
 import ThreedotsIcon from "../../assets/icons/ThreedotsIcon";
 import CircularProgress from "../General/CircularProgress";
+import {
+  Naira,
+  getTotalBudget,
+  getTotalSpendPercentage,
+  getTotalSpent,
+} from "../../assets/data";
 
 // border={"2px solid yellow"}
 
-function BudgetAnalytics() {
+function BudgetAnalytics({ budget }: { budget: Expense[] }) {
   return (
     <Box>
       {/* Month Selection Pane */}
@@ -58,11 +64,11 @@ function BudgetAnalytics() {
             trackColor="transparent"
             color="brand.primaryBlue"
             size={122}
-            value={49}
+            value={+getTotalSpendPercentage(budget)}
             thickness={6}
           >
             <Text fontSize="30px" fontWeight="900" color="brand.primaryBlue">
-              49%
+              {getTotalSpendPercentage(budget)}%
             </Text>
           </CircularProgress>
         </CircularProgress>
@@ -76,10 +82,10 @@ function BudgetAnalytics() {
 
         <Flex>
           <Text fontSize="15px" fontWeight="600" color="brand.primaryBlue">
-            ₦50,000
+            {Naira.format(getTotalSpent(budget))}
           </Text>
           <Text fontSize="15px" fontWeight="600" color="brand.secondaryBlue">
-            /₦120,000
+            / {Naira.format(getTotalBudget(budget))}
           </Text>
         </Flex>
       </Stack>

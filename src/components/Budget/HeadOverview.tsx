@@ -1,7 +1,8 @@
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import NairaIcon from "../../assets/icons/NairaIcon";
+import { Naira, getTotalBudget } from "../../assets/data";
 
-function HeadOverview() {
+function HeadOverview({ budget }: { budget: Expense[] }) {
   return (
     <Stack py={5}>
       {/* header & subheader */}
@@ -29,7 +30,7 @@ function HeadOverview() {
         bg="white"
       >
         <Text color="brand.primaryBlack" fontWeight="700" fontSize="24px">
-          ₦120,000
+          {Naira.format(getTotalBudget(budget))}
         </Text>
       </Flex>
     </Stack>
