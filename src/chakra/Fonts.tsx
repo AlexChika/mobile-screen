@@ -9,28 +9,28 @@ function Fonts() {
         font-style: normal;
         font-weight: 900;
         font-display: swap;
-        src: url('../assets/Font/CircularStd-Black.woff2') format('woff2');
+        src: url('../assets/Font/CircularStd-Black.ttf') format('ttf');
       }
         @font-face {
         font-family: 'Circular Std';
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url('../assets/Font/CircularStd-Bold.woff2') format('woff2');
+        src: url('../assets/Font/CircularStd-Bold.ttf') format('ttf');
       }
         @font-face {
         font-family: 'Circular Std';
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url('../assets/Font/CircularStd-Book.woff2') format('woff2');
+        src: url('../assets/Font/CircularStd-Book.ttf') format('ttf');
       }
         @font-face {
         font-family: 'Circular Std';
         font-style: normal;
         font-weight: 500;
         font-display: swap;
-        src: url('../assets/Font/CircularStd-Medium.woff2') format('woff2');
+        src: url('../assets/Font/CircularStd-Medium.ttf') format('ttf');
       }
 
 

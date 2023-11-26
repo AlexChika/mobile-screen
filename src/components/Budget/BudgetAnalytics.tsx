@@ -19,6 +19,7 @@ import {
   getTotalBudget,
   getTotalSpendPercentage,
   getTotalSpent,
+  monthNames,
 } from "../../assets/data";
 import budgets from "../../assets/data";
 
@@ -35,7 +36,11 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
           <Button
             fontSize="14px"
             fontWeight="700"
-            color="brand.tertiaryBlack"
+            color={
+              budget.month === monthNames[new Date().getMonth() - 1]
+                ? "brand.primaryBlue"
+                : "brand.tertiaryBlack"
+            }
             variant="link"
             onClick={() => setBudget(budgets[new Date().getMonth() - 1])}
           >
@@ -45,7 +50,11 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
           <Button
             fontSize="14px"
             fontWeight="700"
-            color="brand.primaryBlue"
+            color={
+              budget.month === monthNames[new Date().getMonth()]
+                ? "brand.primaryBlue"
+                : "brand.tertiaryBlack"
+            }
             variant="link"
             onClick={() => setBudget(budgets[new Date().getMonth()])}
           >
@@ -63,10 +72,19 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
             />
           </MenuButton>
           <MenuList>
-            {budgets.map((budget) => {
+            {budgets.map((b, i) => {
               return (
-                <MenuItem onClick={() => setBudget(budget)}>
-                  {budget.month}
+                <MenuItem
+                  bg={budget.month === b.month ? "brand.secondaryBlue" : ""}
+                  key={i}
+                  onClick={() => setBudget(b)}
+                >
+                  <Text
+                    color={budget.month === b.month ? "white" : ""}
+                    casing="capitalize"
+                  >
+                    {b.month}
+                  </Text>
                 </MenuItem>
               );
             })}
