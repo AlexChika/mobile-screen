@@ -35,12 +35,24 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
         <Flex gap={6}>
           <Button
             fontWeight="700"
+            variant="link"
+            _before={{
+              content: `" "`,
+              w: "30px",
+              left: 0,
+              pos: "absolute",
+              bottom: "-10px",
+              h: "2px",
+              bg:
+                budget.month === monthNames[new Date().getMonth() - 1]
+                  ? "brand.primaryBlue"
+                  : "transparent",
+            }}
             color={
               budget.month === monthNames[new Date().getMonth() - 1]
                 ? "brand.primaryBlue"
                 : "brand.tertiaryBlack"
             }
-            variant="link"
             onClick={() => setBudget(budgets[new Date().getMonth() - 1])}
           >
             Last Month
@@ -48,6 +60,19 @@ function BudgetAnalytics({ budget, setBudget }: Props) {
 
           <Button
             fontWeight="700"
+            pos="relative"
+            _before={{
+              content: `" "`,
+              w: "30px",
+              left: 0,
+              pos: "absolute",
+              bottom: "-10px",
+              h: "2px",
+              bg:
+                budget.month === monthNames[new Date().getMonth()]
+                  ? "brand.primaryBlue"
+                  : "transparent",
+            }}
             color={
               budget.month === monthNames[new Date().getMonth()]
                 ? "brand.primaryBlue"
